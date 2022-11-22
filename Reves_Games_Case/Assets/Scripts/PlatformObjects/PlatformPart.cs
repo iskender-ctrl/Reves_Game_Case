@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class PlatformPart : MonoBehaviour
 {
-    public GameObject coinPoint, obstaclePoint;
-    public Collider colliders;
+    public GameObject[] coinPoint, obstaclePoint;
 }

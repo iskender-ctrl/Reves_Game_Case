@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LevelGeneratorController : MonoBehaviour
 {
-    public GameObject[] runPartPrefabs;
-    public GameObject startPrefabs, endPrefabs;
+    public GameObject[] runPartPrefabs, obstacles, platformObstaclesChild;
+    public GameObject startPrefabs, endPrefabs, coin;
     Vector3 newPosition, lastPosition;
     [SerializeField] List<GameObject> platformObjectsList = new List<GameObject>();
     public int runPartCount, lastAddedObject;
@@ -16,7 +16,7 @@ public class LevelGeneratorController : MonoBehaviour
     }
     void InstantiatePlatform()
     {
-        GameObject startObject = Instantiate(startPrefabs, Vector3.zero, Quaternion.identity);
+        GameObject startObject = Instantiate(startPrefabs, Vector3.zero, startPrefabs.transform.rotation);
         platformObjectsList.Add(startObject);
 
         for (int i = 0; i < runPartCount; i++)

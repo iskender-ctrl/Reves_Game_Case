@@ -23,14 +23,76 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091698991956657675}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.884, y: 1.354, z: -0.503}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.884, y: 1.17, z: -0.503}
   m_LocalScale: {x: 0.20000003, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8377633287491997099}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &2713999927686425664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2488690153523100912}
+  m_Layer: 0
+  m_Name: CoinPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2488690153523100912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713999927686425664}
+  m_LocalRotation: {x: -0, y: 0.7585321, z: -0, w: 0.65163577}
+  m_LocalPosition: {x: 0.7759777, y: 1.354, z: -0.64486444}
+  m_LocalScale: {x: 0.20000003, y: 1, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8377633287491997099}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 98.67, z: 0}
+--- !u!1 &4114877765858545033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2780132216480603547}
+  m_Layer: 0
+  m_Name: ObstaclePoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2780132216480603547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114877765858545033}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.5520429, y: 1.17, z: 0.34081495}
+  m_LocalScale: {x: 0.20000003, y: 1, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8377633287491997099}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7263735068256265102
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +138,7 @@ GameObject:
   - component: {fileID: 576235817129254763}
   m_Layer: 0
   m_Name: RunPart-__
-  m_TagString: Untagged
+  m_TagString: RunPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +157,8 @@ Transform:
   m_Children:
   - {fileID: 2946074508284721145}
   - {fileID: 5016391835583869374}
+  - {fileID: 2488690153523100912}
+  - {fileID: 2780132216480603547}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -162,5 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPoint:
   - {fileID: 7263735068256265102}
+  - {fileID: 2713999927686425664}
   obstaclePoint:
   - {fileID: 1091698991956657675}
+  - {fileID: 4114877765858545033}

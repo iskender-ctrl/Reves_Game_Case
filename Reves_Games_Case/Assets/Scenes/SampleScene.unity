@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runPartPrefabs:
+  - {fileID: 5528657856016159259, guid: a0542ab0c3f671f44b40dd2450627665, type: 3}
   - {fileID: 7026884784433168574, guid: a255179e3b83f7e4fa771c3eedb048dc, type: 3}
   - {fileID: 8673531666602137771, guid: fc2705ce0228b734bafd939759dcd529, type: 3}
   - {fileID: 9153713276637583121, guid: 337369afbf549384b961b4f1273b830b, type: 3}
@@ -160,16 +161,17 @@ MonoBehaviour:
   - {fileID: 5528657856016159259, guid: caabf1f25fbe39448941b19c63e4af30, type: 3}
   - {fileID: 5037175010850134788, guid: 3a8e50e13d77bca40bd873bf9941e870, type: 3}
   - {fileID: 4157174707527876538, guid: 4df7163344a0400498675688d3047b38, type: 3}
+  - {fileID: 4488016529298219275, guid: 37469b480ed5946449026908819d35cf, type: 3}
   obstacles:
   - {fileID: 6471787444256367497, guid: a0a43e456d0844a478fe6adf1b11987f, type: 3}
   - {fileID: 4343580378198939169, guid: 38c6b247b5b0ef94bb029c525aa67d01, type: 3}
-  startPrefabs: {fileID: 5528657856016159259, guid: a0542ab0c3f671f44b40dd2450627665, type: 3}
-  endPrefabs: {fileID: 4488016529298219275, guid: 37469b480ed5946449026908819d35cf, type: 3}
+  newRunPartList: []
   coin: {fileID: 8773806240781355832, guid: 443e7f56b0c21f8428f418713630bab7, type: 3}
-  platformObjectsList: []
+  newRunPurt: {fileID: 0}
   runPartCount: 10
-  lastAddedObject: 0
-  objectDistance: 10
+  instantiateIndex: 0
+  levelNumber: 1
+  runPartObjectDistance: 10
 --- !u!4 &510725116
 Transform:
   m_ObjectHideFlags: 0

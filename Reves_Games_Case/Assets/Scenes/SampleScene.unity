@@ -165,9 +165,13 @@ MonoBehaviour:
   obstacles:
   - {fileID: 6471787444256367497, guid: a0a43e456d0844a478fe6adf1b11987f, type: 3}
   - {fileID: 4343580378198939169, guid: 38c6b247b5b0ef94bb029c525aa67d01, type: 3}
+  - {fileID: 6437899076938158349, guid: 914a4ba2e8b6a23468687c10fc8107a9, type: 3}
+  coins:
+  - {fileID: 8773806240781355832, guid: 443e7f56b0c21f8428f418713630bab7, type: 3}
   newRunPartList: []
   coin: {fileID: 8773806240781355832, guid: 443e7f56b0c21f8428f418713630bab7, type: 3}
   newRunPurt: {fileID: 0}
+  obstacle: {fileID: 0}
   runPartCount: 10
   instantiateIndex: 0
   levelNumber: 1

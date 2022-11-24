@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class LevelGeneratorController : MonoBehaviour
 {
-    public GameObject[] runPartPrefabs, obstacles;
+    public GameObject[] runPartPrefabs, obstacles, coins;
     [SerializeField] List<GameObject> newRunPartList = new List<GameObject>();
-    public GameObject coin, newRunPurt;
+    public GameObject coin, newRunPurt, obstacle;
     Vector3 newPosition, lastPosition;
     public int runPartCount, instantiateIndex, levelNumber;
     int targetRunPartCountIndex;
     public float runPartObjectDistance;
     bool canContinue;
+    PlatformPart platformPart;
     void Start()
     {
         InstantiatePlatform();
-        InstantiateObstacleAndCoins();
+        InstantiateCoins();
+        InstantiateObstacles();
     }
     void InstantiatePlatform()
     {
@@ -47,17 +49,30 @@ public class LevelGeneratorController : MonoBehaviour
             }
         }
     }
-    void InstantiateObstacleAndCoins()
+    void InstantiateCoins()
     {
         for (int i = 0; i < newRunPartList.Count; i++)
         {
-            PlatformPart platformPart = newRunPartList[i].transform.GetComponent<PlatformPart>();
-            GameObject coinPoint = platformPart.coinPoint[Random.Range(0, platformPart.coinPoint.Length)];
-            InstantiateFunction(coin, coinPoint.transform.position, coin.transform.rotation);
-
-            GameObject point = platformPart.obstaclePoint[Random.Range(0, platformPart.obstaclePoint.Length)];
-            int randomObstacle = Random.Range(0, obstacles.Length);
-            InstantiateFunction(obstacles[randomObstacle], point.transform.position, Quaternion.Euler(obstacles[randomObstacle].transform.eulerAngles.x, -point.transform.localEulerAngles.y, obstacles[randomObstacle].transform.eulerAngles.z));
+            platformPart = newRunPartList[i].transform.GetComponent<PlatformPart>();
+            InstantiateObstacleAndCoins(coin, platformPart.coinPoint, coins);
+        }
+    }
+    void InstantiateObstacles()
+    {
+        for (int i = 0; i < newRunPartList.Count; i++)
+        {
+            platformPart = newRunPartList[i].transform.GetComponent<PlatformPart>();
+            InstantiateObstacleAndCoins(obstacle, platformPart.obstaclePoint, obstacles);
+        }
+    }
+    void InstantiateObstacleAndCoins(GameObject targetObject, List<GameObject> targetArray, GameObject[] prefabObjects)
+    {
+        for (int j = 0; j < levelNumber; j++)
+        {
+            targetObject = targetArray[Random.Range(0, targetArray.Count)];
+            targetArray.Remove(targetObject);
+            int randomObstacle = Random.Range(0, prefabObjects.Length);
+            InstantiateFunction(prefabObjects[randomObstacle], targetObject.transform.position, Quaternion.Euler(prefabObjects[randomObstacle].transform.eulerAngles.x, -targetObject.transform.localEulerAngles.y, prefabObjects[randomObstacle].transform.eulerAngles.z));
         }
     }
     Vector3 InstantiateFunction(GameObject spawnObj, Vector3 position, Quaternion rotation)

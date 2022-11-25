@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4982909127981243943}
   - component: {fileID: 7116301189507934957}
   - component: {fileID: 7777199264422804395}
+  - component: {fileID: 14785868512845629}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 8773806240781355832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 150, y: 150, z: 150}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,3 +99,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5216581434543980006, guid: 24e277dd8b933b541a14a2249beb2479, type: 3}
+--- !u!114 &14785868512845629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773806240781355832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ac28a3e03f15d4fae7c393224e8032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCoinDistance: 1.23
+  moveSpeed: 20

@@ -266,14 +266,8 @@ MonoBehaviour:
   - {fileID: 4343580378198939169, guid: 38c6b247b5b0ef94bb029c525aa67d01, type: 3}
   - {fileID: 6437899076938158349, guid: 914a4ba2e8b6a23468687c10fc8107a9, type: 3}
   coins:
-  - {fileID: 8773806240781355832, guid: 443e7f56b0c21f8428f418713630bab7, type: 3}
-  newRunPartList: []
-  mainCoin: {fileID: 3022517474696832528, guid: 9ef53e7209e140a4b814e0d9f740bd96, type: 3}
-  coin: {fileID: 8773806240781355832, guid: 443e7f56b0c21f8428f418713630bab7, type: 3}
-  newRunPurt: {fileID: 0}
-  obstacle: {fileID: 0}
+  - {fileID: 8728732200124802750, guid: 2740fbb4920a7d44a83731294d0ea167, type: 3}
   runPartCount: 10
-  instantiateIndex: 0
   levelNumber: 1
   runPartObjectDistance: 10
 --- !u!4 &510725116
@@ -357,14 +351,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -500,14 +494,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.23344536, y: 0, z: 0, w: 0.97236997}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 27, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  Offset: {x: 0, y: 1.26, z: -4.31}
+  Offset: {x: 0, y: 3, z: -4.31}
   SmoothTime: 0.3
 --- !u!1 &1177218541
 GameObject:

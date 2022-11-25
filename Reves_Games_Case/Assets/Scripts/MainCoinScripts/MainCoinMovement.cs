@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinMovement : MonoBehaviour
+public class MainCoinMovement : MonoBehaviour
 {
-    Quaternion transformRotation;
+    Vector3 transformRotation;
     [SerializeField] float turnSpeed = 5;
     [SerializeField] float moveForwardSpeed = 5;
     void Start()
     {
-
+        transform.parent = null;
     }
 
     // Update is called once per frame
@@ -29,8 +29,8 @@ public class CoinMovement : MonoBehaviour
         if (touch.phase == TouchPhase.Moved)
         {
             Vector3 NewTouchPosition = touch.deltaPosition;
-            transformRotation = Quaternion.Euler(transformRotation.x, NewTouchPosition.x * turnSpeed * Time.deltaTime, transformRotation.z);
-            transform.rotation = transformRotation * transform.rotation;
+            transformRotation = new Vector3(transformRotation.x, NewTouchPosition.x * turnSpeed * Time.deltaTime, transformRotation.z);
+            transform.eulerAngles = transformRotation + transform.eulerAngles;
         }
     }
 }

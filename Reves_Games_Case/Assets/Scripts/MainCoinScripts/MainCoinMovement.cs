@@ -7,6 +7,7 @@ public class MainCoinMovement : MonoBehaviour
     Vector3 transformRotation;
     [SerializeField] float turnSpeed = 5;
     [SerializeField] float moveForwardSpeed = 5;
+
     void Start()
     {
         transform.parent = null;
@@ -15,11 +16,14 @@ public class MainCoinMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveForwardSpeed * Time.deltaTime, 0, 0);
-
-        if (Input.touchCount == 1)
+        if (!MainCoinHitCollisionObstacle.instance.isHitToObstacle)
         {
-            CoinMoveWithRotation();
+            transform.Translate(moveForwardSpeed * Time.deltaTime, 0, 0);
+
+            if (Input.touchCount == 1)
+            {
+                CoinMoveWithRotation();
+            }
         }
     }
     void CoinMoveWithRotation()

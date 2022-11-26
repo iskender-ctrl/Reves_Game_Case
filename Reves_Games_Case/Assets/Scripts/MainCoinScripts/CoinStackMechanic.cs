@@ -14,15 +14,18 @@ public class CoinStackMechanic : MonoBehaviour
     }
     private void Update()
     {
-        positionCoins.Insert(0, transform.position);
-        int i = 0;
-        foreach (GameObject coin in coinsStack)
+        if (!MainCoinHitCollisionObstacle.instance.isHitToObstacle)
         {
-            Vector3 position = positionCoins[Mathf.Min(i * gap, positionCoins.Count - 1)];
-            Vector3 positionForward = position - coin.transform.position;
-            coin.transform.position += positionForward * speed * Time.deltaTime;
-            coin.transform.LookAt(position);
-            i++;
+            positionCoins.Insert(0, transform.position);
+            int i = 0;
+            foreach (GameObject coin in coinsStack)
+            {
+                Vector3 position = positionCoins[Mathf.Min(i * gap, positionCoins.Count - 1)];
+                Vector3 positionForward = position - coin.transform.position;
+                coin.transform.position += positionForward * speed * Time.deltaTime;
+                coin.transform.LookAt(position);
+                i++;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

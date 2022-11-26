@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraFollowScript : MonoBehaviour
 {
     public Transform target;
-
     public Vector3 Offset;
     public float SmoothTime = 0.3f;
     private Vector3 velocity = Vector3.zero;
@@ -17,7 +16,10 @@ public class CameraFollowScript : MonoBehaviour
     }
     private void LateUpdate()
     {
-        Vector3 targetPosition = target.position + Offset;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, SmoothTime);
+        if (MainCoinHitCollisionObstacle.instance.canMove)
+        {
+            Vector3 targetPosition = target.position + Offset;
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, SmoothTime);
+        }
     }
 }

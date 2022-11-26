@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelSwipeToPlay : MonoBehaviour
 {
-    [SerializeField] GameObject swipeTextAndHandIcon;
+    public GameObject swipeTextAndHandIcon;
     void Start()
     {
         Time.timeScale = 0;
@@ -13,10 +13,13 @@ public class LevelSwipeToPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount == 1)
+        if (!MainCoinHitCollisionObstacle.instance.isHitToObstacle)
         {
-            Time.timeScale = 1;
-            swipeTextAndHandIcon.SetActive(false);
+            if (Input.touchCount == 1)
+            {
+                Time.timeScale = 1;
+                swipeTextAndHandIcon.SetActive(false);
+            }
         }
     }
 }

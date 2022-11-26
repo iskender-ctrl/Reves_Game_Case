@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 3966738867286428827}
   - component: {fileID: 46008440947524414}
   - component: {fileID: 2830375094374119412}
-  - component: {fileID: 3496506929036569458}
-  - component: {fileID: 3496506929036569461}
   - component: {fileID: 1489333886445734341}
+  - component: {fileID: 2510012692209546759}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -86,32 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3496506929036569458
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4343580378198939169}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.014188447, y: 0.0012009343, z: 0.0014234739}
-  m_Center: {x: 0, y: 0.000023306458, z: 0.0015794126}
---- !u!65 &3496506929036569461
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4343580378198939169}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.0014467795, y: 0.014188444, z: 0.001302291}
-  m_Center: {x: 0.000056076347, y: -4.4412154e-19, z: 0.0016400032}
 --- !u!64 &1489333886445734341
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -126,3 +99,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1463048430781114374, guid: 6b17d9c17d1d54e46a6bbab6173796a4, type: 3}
+--- !u!114 &2510012692209546759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4343580378198939169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6de806361699ce49aa3c1550faee1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 150

@@ -8,6 +8,7 @@ public class MainCoinHitCollisionObstacle : MonoBehaviour
     List<GameObject> coinsList = new List<GameObject>();
     public bool isHitToObstacle;
     public bool canMove = true;
+    public bool hitToEnded;
     private void Awake()
     {
         instance = this;
@@ -31,6 +32,12 @@ public class MainCoinHitCollisionObstacle : MonoBehaviour
                 boxCollider.isTrigger = false;
                 rb.useGravity = true;
             }
+        }
+
+        if (other.transform.tag == "Ended")
+        {
+            hitToEnded = true;
+            canMove = false;
         }
     }
 }

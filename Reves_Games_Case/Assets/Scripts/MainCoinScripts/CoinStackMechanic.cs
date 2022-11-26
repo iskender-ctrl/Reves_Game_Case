@@ -14,7 +14,7 @@ public class CoinStackMechanic : MonoBehaviour
     }
     private void Update()
     {
-        if (!MainCoinHitCollisionObstacle.instance.isHitToObstacle)
+        if (!MainCoinHitCollisionObstacle.instance.isHitToObstacle && !MainCoinHitCollisionObstacle.instance.hitToEnded)
         {
             positionCoins.Insert(0, transform.position);
             int i = 0;

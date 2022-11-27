@@ -7,10 +7,9 @@ public class CoinStackMechanic : MonoBehaviour
     public static CoinStackMechanic instance;
     public List<GameObject> coinsStack = new List<GameObject>();
     public List<Vector3> positionCoins = new List<Vector3>();
-    public float coinsStackDistance, speed, endenPlatformStackSpeed;
+    public float speed, endedPlatformStackSpeed;
     public int gap = 20;
     public bool stackOnEndedPlatform, hitToEndedPlatform;
-    Vector3 endenPlatform;
     private void Awake()
     {
         instance = this;
@@ -51,7 +50,7 @@ public class CoinStackMechanic : MonoBehaviour
         {
             for (int i = 0; i < coinsStack.Count; i++)
             {
-                coinsStack[i].transform.position = Vector3.Lerp(coinsStack[i].transform.position, new Vector3(StairController.instance.stairObjects[i].transform.position.x / 2, StairController.instance.stairObjects[i].transform.position.y + 1, coinsStack[0].transform.position.z), endenPlatformStackSpeed * Time.deltaTime);
+                coinsStack[i].transform.position = Vector3.Lerp(coinsStack[i].transform.position, new Vector3(StairController.instance.stairObjects[i].transform.position.x / 2, StairController.instance.stairObjects[i].transform.position.y + 1, coinsStack[0].transform.position.z), endedPlatformStackSpeed * Time.deltaTime);
                 coinsStack[i].transform.rotation = Quaternion.Euler(0, 0, 0);
                 coinsStack[i].transform.GetComponent<BoxCollider>().isTrigger = false;
                 coinsStack[i].transform.GetComponent<Rigidbody>().useGravity = false;
@@ -80,7 +79,6 @@ public class CoinStackMechanic : MonoBehaviour
     {
         if (other.transform.tag == "Ended")
         {
-            endenPlatform = other.transform.position;
             stackOnEndedPlatform = true;
             hitToEndedPlatform = true;
 

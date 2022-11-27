@@ -208,10 +208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsStack: []
   positionCoins: []
-  coinsStackDistance: 0.8
   speed: 20
-  endenPlatformStackSpeed: 20
-  gap: 13
+  endedPlatformStackSpeed: 20
+  gap: 3
   stackOnEndedPlatform: 0
   hitToEndedPlatform: 0
 --- !u!114 &-6171949898904204231
@@ -240,3 +239,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2af5550aa98644a97f9f0798191c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winPanelObject: {fileID: 0}

@@ -16,9 +16,9 @@ public class MainCoinMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!MainCoinHitCollisionObstacle.instance.isHitToObstacle && !MainCoinHitCollisionObstacle.instance.hitToEnded)
+        if (!MainCoinHitCollisionObstacle.instance.cantMove)
         {
-            transform.Translate(moveForwardSpeed * Time.deltaTime, 0, 0);
+            transform.Translate(0, 0, moveForwardSpeed * Time.deltaTime);
 
             if (Input.touchCount == 1)
             {

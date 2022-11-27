@@ -5,10 +5,13 @@ public class LevelGeneratorController : MonoBehaviour
     public GameObject[] runStartPartPrefabs, runEndPartPrefabs, runPartPrefabs, obstacles, coins;
     public int runPartCount, levelNumber;
     public float runPartObjectDistance;
+    public GameObject mainCoinPrefab;
 
     void Awake()
     {
         GameObject lastObject = CreateStartObject();
+        Instantiate(mainCoinPrefab, new Vector3(lastObject.transform.position.x / 2, lastObject.transform.position.y + 1.228f, lastObject.transform.position.z / 2), mainCoinPrefab.transform.rotation);
+
         for (int i = 0; i < runPartCount; i++)
         {
             lastObject = CreatePartObject(lastObject);

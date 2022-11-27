@@ -405,6 +405,7 @@ MonoBehaviour:
   runPartCount: 10
   levelNumber: 1
   runPartObjectDistance: 10
+  mainCoinPrefab: {fileID: 8728732200124802750, guid: 91dbabd46e293cf459372897bae5f280, type: 3}
 --- !u!4 &510725116
 Transform:
   m_ObjectHideFlags: 0

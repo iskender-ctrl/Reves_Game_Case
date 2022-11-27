@@ -5,17 +5,11 @@ using UnityEngine;
 public class MainCoinHitCollisionObstacle : MonoBehaviour
 {
     public static MainCoinHitCollisionObstacle instance;
-    List<GameObject> coinsList = new List<GameObject>();
     public bool isHitToObstacle;
-    public bool canMove = true;
-    public bool hitToEnded;
+    public bool cantMove = true;
     private void Awake()
     {
         instance = this;
-    }
-    void Start()
-    {
-        coinsList = GetComponent<CoinStackMechanic>().coinsStack;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -23,21 +17,16 @@ public class MainCoinHitCollisionObstacle : MonoBehaviour
         if (other.transform.tag == "Obstacle")
         {
             isHitToObstacle = true;
+            cantMove = true;
 
-            for (int i = 0; i < coinsList.Count; i++)
+            for (int i = 0; i < CoinStackMechanic.instance.coinsStack.Count; i++)
             {
-                Rigidbody rb = coinsList[i].GetComponent<Rigidbody>();
-                BoxCollider boxCollider = coinsList[i].GetComponent<BoxCollider>();
+                Rigidbody rb = CoinStackMechanic.instance.coinsStack[i].GetComponent<Rigidbody>();
+                BoxCollider boxCollider = CoinStackMechanic.instance.coinsStack[i].GetComponent<BoxCollider>();
                 rb.AddForce(new Vector3(Random.Range(-2, 2), 3, Random.Range(-2, 2)), ForceMode.Impulse);
                 boxCollider.isTrigger = false;
                 rb.useGravity = true;
             }
-        }
-
-        if (other.transform.tag == "Ended")
-        {
-            hitToEnded = true;
-            canMove = false;
         }
     }
 }

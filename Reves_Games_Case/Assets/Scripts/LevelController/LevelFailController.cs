@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class LevelFailController : MonoBehaviour
 {
-    public GameObject trayAgainPanel;
+    public GameObject trayAgainPanel, mainCoin;
+    Vector3 firstPos, firstRot;
+    private void Start()
+    {
+        mainCoin = GameObject.FindGameObjectWithTag("MainCoin");
+        firstPos = mainCoin.transform.position;
+        firstRot = mainCoin.transform.eulerAngles;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (MainCoinHitCollisionObstacle.instance.isHitToObstacle)
+        if (MainCoinHitCollisionObstacle.instance.isHitToObstacle || mainCoin.transform.position.y < firstPos.y || mainCoin.transform.rotation.z + 1 < firstRot.z)
         {
             StartCoroutine(OpenFailPanel());
         }

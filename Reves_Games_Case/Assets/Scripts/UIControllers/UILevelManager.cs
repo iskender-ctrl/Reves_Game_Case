@@ -18,7 +18,7 @@ public class UILevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MainCoinHitCollisionObstacle.instance.canMove)
+        if (!MainCoinHitCollisionObstacle.instance.isHitToObstacle)
         {
             float newDistance = Vector3.Distance(mainCoin.position, endedPlatform.position);
             float levelBarValue = Mathf.InverseLerp(fullDistance, 0, newDistance);

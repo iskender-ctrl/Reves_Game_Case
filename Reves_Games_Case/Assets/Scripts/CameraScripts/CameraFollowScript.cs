@@ -16,10 +16,11 @@ public class CameraFollowScript : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (MainCoinHitCollisionObstacle.instance.canMove)
+        if (CoinStackMechanic.instance.coinsStack.Count > 0)
         {
-            Vector3 targetPosition = target.position + Offset;
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, SmoothTime);
+            target = CoinStackMechanic.instance.coinsStack[0].transform;
         }
+        Vector3 targetPosition = target.position + Offset;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, SmoothTime);
     }
 }
